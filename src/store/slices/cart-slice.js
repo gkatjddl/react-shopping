@@ -7,7 +7,7 @@ const initialState = [];
 
 const cartSlice = createSlice(
   {
-    name:"",
+    name:"cart",
     initialState,
     reducers:{
       // reducers에는 제공할 함수를 기록
@@ -17,12 +17,12 @@ const cartSlice = createSlice(
       },
 
       // 제거하기
-      removeToCart(state,action){
+      removeFromCart(state,action){
         return state.filter((item)=>item.id !== action.payload);
       }
     }
   });
 
   // reducsers에 추가한 함수는 여기서 export
-  export const {addToCart,removeToCart} = cartSlice.actions;
+  export const {addToCart,removeFromCart} = cartSlice.actions;
   export default cartSlice.reducer;
